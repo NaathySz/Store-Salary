@@ -1,0 +1,7 @@
+{
+    "Prefix": "{red}[Maaş] {white}",
+
+    "Salary already claimed": "Maaşınızı zaten almışsınız. Sonraki maaş {green}{0} {white}saat {green}{1} {white}dakika {green}{2} {white} saniye sonra.",
+    "Salary received": "{green}{0} {white}kredi olan maaşınızı aldınız.",
+    "No salary available": "Alabileceğiniz bir maaşınız yok."
+}
