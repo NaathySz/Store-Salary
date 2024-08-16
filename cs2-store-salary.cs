@@ -52,7 +52,7 @@ public class Store_SalaryConfig : BasePluginConfig
 public class Store_Salary : BasePlugin, IPluginConfig<Store_SalaryConfig>
 {
     public override string ModuleName => "Store Module [Salary]";
-    public override string ModuleVersion => "0.0.1";
+    public override string ModuleVersion => "0.0.2";
     public override string ModuleAuthor => "Nathy";
 
     public IStoreApi? StoreApi { get; set; }
@@ -175,6 +175,14 @@ public class Store_Salary : BasePlugin, IPluginConfig<Store_SalaryConfig>
 
     private string GetConnectionString()
     {
-        return $"Server={Config.DatabaseHost};Port={Config.DatabasePort};Database={Config.DatabaseName};Uid={Config.DatabaseUser};Pwd={Config.DatabasePassword};";
+        var builder = new MySqlConnectionStringBuilder
+        {
+            Server = Config.DatabaseHost,
+            Port = (uint)Config.DatabasePort,
+            Database = Config.DatabaseName,
+            UserID = Config.DatabaseUser,
+            Password = Config.DatabasePassword
+        };
+        return builder.ConnectionString;
     }
 }
